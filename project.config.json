@@ -4,17 +4,17 @@
   "compileType": "miniprogram",
   "scripts": {},
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "debugOptions": {
     "hidedInDevtools": []
   },
   "staticServerOptions": {
-    "baseURL": "",
     "servePath": ""
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "coverView": true,
     "es6": true,
     "postcss": true,
@@ -33,7 +33,19 @@
     "packNpmRelationList": [],
     "minifyWXSS": true,
     "showES6CompileOption": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "checkInvalidKey": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "disableUseStrict": false,
+    "useStaticServer": true,
+    "useCompilerPlugins": false
   },
-  "condition": {}
+  "condition": {},
+  "watchOptions": {
+    "ignore": []
+  }
 }

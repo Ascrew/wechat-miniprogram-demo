@@ -2,5 +2,9 @@
   "pages": [
     "pages/home/home"
   ],
-  "lazyCodeLoading": "requiredComponents"
+  "window": {
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序 Demo"     
+  }
 }

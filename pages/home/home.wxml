@@ -1,1 +1,7 @@
-hello world!
+<view>
+  <text class="title" wx:for="{{items}}">
+    {{index}} -- {{item}}
+  </text>
+  <input placeholder="输入新增事项" bind:input="inputHandler" />
+  <button bind:tap="buttonHandler">确定</button>
+</view>
