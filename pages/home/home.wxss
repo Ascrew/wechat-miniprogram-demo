@@ -7,12 +7,12 @@
 }
 
 .wx-swiper-dots.wx-swiper-dots-horizontal{
-  bottom: 150rpx;
+  bottom: 190rpx;
 }
 
 .main-wrap {
   position: absolute;
-  top: 325rpx;
+  top: 280rpx;
   box-sizing: border-box;
   width: 100%;
   padding: 20rpx;
@@ -29,7 +29,7 @@
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 10rpx 10rpx 0 rgb(0, 0, 0, 10%);
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
 }
 
 .one-button {
@@ -59,29 +59,120 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30rpx;
 }
 
 .two-img {
   width: 100%;
-  height: 190rpx;
 }
 
 .two-left-img {
   margin-right: 20rpx;
 }
 
+.two-button-spc {
+  margin-bottom: 30rpx;
+}
+
 .two-img-spc {
   width: 100%;
-  height: 190rpx;
-  margin-top: 10rpx;
   border-radius: 10rpx;
 }
 
 .main-three {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
 }
 
 .three-button {
   flex: 1;
+  background-color: aqua;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.three-button:first-child {
+  margin-right: 20rpx;
+}
+
+.three-img {
+  width: 0;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.three-text {
+  flex: 2
+}
+
+.main-four {
+  width: 100%;
+  height: 166rpx;
+  border-radius: 10rpx;
+  background-color: #f0f4fa;
+  display: flex;
+}
+
+.four-left {
+  display: inline-block;
+  height: 100%;
+}
+
+.four-left-img {
+  height: 100%;
+}
+
+.four-right {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: #f0f4fa;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.four-right-temp {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.four-right-transform {
+  position: absolute;
+  /* animation: myScroll 2s infinite; */
+}
+
+/* @keyframes myScroll {
+  from {
+    top: 0;
+  }
+  to {
+    top: 0;
+  }
+} */
+
+.four-right-anct {
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  margin-bottom: 10rpx;
+}
+
+.four-right-content {
+  width: 60%;
+  margin-right: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.four-right-date {
+  width: 40%;
 }
