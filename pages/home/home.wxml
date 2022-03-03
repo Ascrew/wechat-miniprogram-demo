@@ -1,7 +1,57 @@
-<view>
-  <text class="title" wx:for="{{items}}">
-    {{index}} -- {{item}}
-  </text>
-  <input placeholder="输入新增事项" bind:input="inputHandler" />
-  <button bind:tap="buttonHandler">确定</button>
+<!-- 顶部轮播 -->
+<view class="banner-wrap">
+  <swiper
+    class="swiper"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    indicatorDots="{{indicatorDots}}"
+    duration="{{duration}}"
+    circular="{{true}}"
+    current="activeIndex"
+    bindchange="switchCard"
+  >
+    <block wx:for="{{swipers}}" wx:key="*this" wx:index="index">
+      <swiper-item class="swiper-item-wrap">
+        <view class="swiper-item {{activeIndex == index? 'current' : ''}}">
+          <image class="swiper-item-img" src="{{item}}" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 主体 -->
+<view class="main-wrap">
+  <!-- 我要办... -->
+  <view class="main-one">
+    <block wx:for="{{oneBtnList}}" wx:key="*this">
+      <view class="one-button" bindtap="oneClick">
+        <image class="one-img" src="{{item.imgUrl}}" mode="aspectFit" />
+        <text class="one-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!-- part 2 -->
+  <view class="main-two">
+    <block wx:for="{{twoBtnList}}" wx:key="*this">
+      <view class="two-button">
+        <image class="two-img two-left-img" src="{{item.imgUrls[0]}}" mode="aspectFit" />
+        <image class="two-img" src="{{item.imgUrls[1]}}" mode="aspectFit" />
+      </view> 
+    </block>
+    <view class="two-button-spc">
+      <image class="two-img-spc" src="{{spcImg}}" mode="aspectFill" /> 
+    </view>
+  </view>
+
+  <!-- part 3 -->
+  <view class="main-three">
+    <block wx:for="{{threeBtnList}}" wx:key="*this">
+      <view class="three-button">
+        <image class="three-img" src="{{item.imgUrl}}" mode="aspectFit"></image>
+        <text class="three-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
 </view>

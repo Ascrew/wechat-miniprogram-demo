@@ -1,0 +1,87 @@
+.swiper {
+  height: 470rpx;
+}
+
+.swiper-item-img {
+  width: 100%;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal{
+  bottom: 150rpx;
+}
+
+.main-wrap {
+  position: absolute;
+  top: 325rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx;
+  background-color: transparent;
+}
+
+.main-one {
+  height: 200rpx;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 10rpx 10rpx 0 rgb(0, 0, 0, 10%);
+  margin-bottom: 20rpx;
+}
+
+.one-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.one-img {
+  height: 80rpx;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.one-text {
+  font-size: 30rpx;
+  vertical-align: baseline;
+  font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;
+}
+
+.main-two {
+  width: 100%;
+}
+
+.two-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-img {
+  width: 100%;
+  height: 190rpx;
+}
+
+.two-left-img {
+  margin-right: 20rpx;
+}
+
+.two-img-spc {
+  width: 100%;
+  height: 190rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.main-three {
+  width: 100%;
+  display: flex;
+}
+
+.three-button {
+  flex: 1;
+}
