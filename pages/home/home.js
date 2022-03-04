@@ -63,61 +63,33 @@ Page({
       leftImgUrl: '../../static/images/3-1.png',
       rightContent: [
         {
-          content: 'aaaaaaaaaaaaaaaaaaaa',
+          content: '111111111111111111111111111111',
           date: '2022-01-01'
         },
         {
-          content: 'bbbbbbbbbbbbbbbbbbbb',
+          content: '222222222222222222222222222222',
           date: '2022-01-01'
         },
         {
-          content: 'cccccccccccccccccccc',
+          content: '333333333333333333333333333333',
           date: '2022-01-01'
         },
         {
-          content: 'dddddddddddddddddddd',
+          content: '444444444444444444444444444444',
           date: '2022-01-01'
         },
         {
-          content: 'dddddddddddddddddddd',
+          content: '555555555555555555555555555555',
           date: '2022-01-01'
         },
         {
-          content: 'dddddddddddddddddddd',
+          content: '666666666666666666666666666666',
           date: '2022-01-01'
         },
         {
-          content: 'dddddddddddddddddddd',
+          content: '777777777777777777777777777777',
           date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
-        {
-          content: 'dddddddddddddddddddd',
-          date: '2022-01-01'
-        },
+        }
       ],
       calHeight: 0,
       calSec: 0,
@@ -151,15 +123,18 @@ Page({
     // }, 0)
     //     console.log('listen cal2 height', calHeight);
     //     console.log('listen cal2 second', calSec);
-    setInterval(function () {
-      this.animate('.four-right-transform', [
+    let that = this
+    function animateFunc() {
+      that.animate('.four-right-transform', [
         {
           top: '0'
         },
         {
-          top: '-200rpx'
+          top: '-300rpx'
         }
-      ], 3000);
-    }.bind(this), 3000)
-  }
+      ], 10000);
+    };
+    animateFunc();
+    setInterval(animateFunc, 10000)
+}
 });

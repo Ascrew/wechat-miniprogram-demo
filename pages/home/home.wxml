@@ -63,13 +63,18 @@
 		<view class="four-right">
 			<view class="four-right-temp">
 				<view class="four-right-transform">
-					<view class="four-right-anct" wx:for="{{fourBtnList.rightContent}}" wx:key="*this">
+					<view class="four-right-anct" wx:for="{{fourBtnList.rightContent}}" wx:key="index">
 						<view class="four-right-content">{{item.content}}</view>
 						<view class="four-right-date">{{item.date}}</view>
 					</view>
 				</view>
 			</view>
 		</view>
+	</view>
+
+	<!-- part 5	 -->
+	<view class="card-title">
+		<view class="card-text">标题</view>
 	</view>
 </view>
 

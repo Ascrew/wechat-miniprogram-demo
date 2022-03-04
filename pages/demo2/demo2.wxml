@@ -1,1 +1,11 @@
-demo2
+ <!-- background -->
+<view class="background">
+  <!-- header -->
+  <view class="head">
+    <view class="head-text">政策法规</view>
+  </view>
+  <!-- search bar   -->
+  <view class="search-wrap">
+    <mp-searchbar ext-class="searchbar-cls" placeholder="请输入搜索关键词"></mp-searchbar> 
+  </view>
+</view>
