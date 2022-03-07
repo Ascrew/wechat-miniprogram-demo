@@ -34,3 +34,9 @@
 .search-wrap {
   margin-top: 30rpx;
 }
+
+.searchbar-cls {
+  padding: 0 16rpx;
+  background-color: transparent;
+  padding-bottom: 30rpx;
+}

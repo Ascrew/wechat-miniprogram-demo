@@ -1,4 +1,4 @@
- <!-- background -->
+<!-- background -->
 <view class="background">
   <!-- header -->
   <view class="head">
@@ -6,6 +6,22 @@
   </view>
   <!-- search bar   -->
   <view class="search-wrap">
-    <mp-searchbar ext-class="searchbar-cls" placeholder="请输入搜索关键词"></mp-searchbar> 
+    <mp-searchbar 
+      ext-class="searchbar-cls" 
+      placeholder="请输入搜索关键词"
+      cancel="false"
+      bindinput="handleInput"
+    > </mp-searchbar>
+  </view>
+  <!-- content -->
+  <view class="content-wrap">
+    <view class="one-box" wx:for="{{result}}" wx:key="*this">
+      <view class="one-box-text">
+        {{item.content}}
+      </view>
+      <view class="one-box-date">
+        {{item.date}}
+      </view>
+    </view>
   </view>
 </view>
