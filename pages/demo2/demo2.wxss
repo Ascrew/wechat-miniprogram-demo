@@ -40,3 +40,34 @@
   background-color: transparent;
   padding-bottom: 30rpx;
 }
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.one-box {
+  padding: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+}
+
+.one-box-tag {
+  background-color: #1b65b9;
+  margin: 8rpx 20rpx auto 0;
+  height: 40rpx;
+  width: 8rpx;
+  border-radius: 4rpx;
+}
+
+.one-box-content {
+  font-size: 32rpx;
+}
+
+.one-box-date {
+  margin: 20rpx 0 0 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
