@@ -1,7 +1,11 @@
 Page({
   data: {
     timer: 0,
-    result: []
+    result: [],
+    tempData: {
+      content: '一段内容一段内容一段内容一段内容一段内容段内容',
+      date: '2022-02-01'
+    }
   },
   handleInput(e) {
     clearTimeout(this.data.timer);
@@ -13,22 +17,23 @@ Page({
       let inputValue = e.detail.value;
       setTimeout(() => {
         this.setData({
-          result: [
-            {
-              content: '一一段内容一段内容一段内容一段内容一段内容段内容',
-              date: '2022-02-01'
-            },
-            {
-              content: '一一段内容一段内容一段内容一段内容一段内容段内容',
-              date: '2022-02-01'
-            }
-          ]
+          result: [this.data.tempData]
         })
         wx.hideLoading();
       }, 0)
     }, 1500)
   },
+  onPullDownRefresh() {
+    // let arrRes = this.data.result
+    // arrRes.push(this.data.tempData)
+    this.setData({
+      result: [...this.data.result, this.data.tempData]
+    })
+    wx.stopPullDownRefresh()
+  },
   onLoad: function (options) {
 
+  },
+  onShow() {
   }
 });

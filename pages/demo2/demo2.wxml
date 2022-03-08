@@ -1,9 +1,9 @@
+<!-- header -->
+<view class="head">
+  <view class="head-text">政策法规</view>
+</view>
 <!-- background -->
 <view class="background">
-  <!-- header -->
-  <view class="head">
-    <view class="head-text">政策法规</view>
-  </view>
   <!-- search bar   -->
   <view class="search-wrap">
     <mp-searchbar
