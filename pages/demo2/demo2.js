@@ -1,12 +1,22 @@
 Page({
   data: {
+    // pager
+    pageNum: 1,
+    pageSize: 10,
+    total: 0,
+
+    // setTimeout
     timer: 0,
+
+    // main data
+    factData: [],
     result: [],
     tempData: {
-      content: '一段内容一段内容一段内容一段内容一段内容段内容',
+      content: 'test',
       date: '2022-02-01'
     }
   },
+  // search bar inputing event
   handleInput(e) {
     clearTimeout(this.data.timer);
     this.data.timer = setTimeout(() => {
@@ -23,16 +33,48 @@ Page({
       }, 0)
     }, 1500)
   },
-  onPullDownRefresh() {
-    // let arrRes = this.data.result
-    // arrRes.push(this.data.tempData)
-    this.setData({
-      result: [...this.data.result, this.data.tempData]
-    })
-    wx.stopPullDownRefresh()
-  },
-  onLoad: function (options) {
 
+  // pull down page event
+  onPullDownRefresh() {
+    wx.switchTab({
+      url: '../demo2/demo2',
+    });
+  },
+
+  // reach bottom 
+  onReachBottom() {
+    this.setData({
+      result: [...this.data.result]
+    })
+  },
+
+  queryData(pageNum = 1, pageSize = 10) {
+    let tempData = this.data.factData.slice(
+      (pageNum - 1) * pageSize,
+      pageNum * pageSize
+    )
+    return tempData
+  },
+
+  // init arr data
+  initResult() {
+    let dataFactory = []
+    for (let i = 0; i < 30; i++) {
+      dataFactory.push({
+        content: '一段内容一段内容一段内容一段内容一段内容段内容id: ' + (i + 1),
+        date: '2022-01-01'
+      })
+    }
+    return dataFactory;
+  },
+
+  onLoad: function (options) {
+    this.setData({
+      factData: this.initResult()
+    })
+    this.setData({
+      result: this.queryData(1, 10)
+    })
   },
   onShow() {
   }
