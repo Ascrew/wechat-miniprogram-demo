@@ -1,9 +1,14 @@
 Page({
   data: {
+    headText: '政策法规',
+    // css flag
+    isBottom: false,
+    bottomDisplay: 'none',
     // pager
     pageNum: 1,
     pageSize: 10,
     total: 0,
+    tempTotal: 35,
 
     // setTimeout
     timer: 0,
@@ -34,20 +39,28 @@ Page({
     }, 1500)
   },
 
-  // pull down page event
+  // pull down page event  :  not work probably
   onPullDownRefresh() {
     wx.switchTab({
       url: '../demo2/demo2',
+      success: function(){
+        wx.stopPullDownRefresh()
+      },
+      fail: function() {
+        wx.stopPullDownRefresh()
+      }
     });
   },
 
   // reach bottom 
   onReachBottom() {
+    if(this.data.isBottom) {
+      return
+    }
+    this.data.pageNum += 1
     this.setData({
-
-    })
-    this.setData({
-      result: [...this.data.result, ...this.queryData(this)]
+      result: [...this.data.result, ...this.queryData(this.data.pageNum, this.data.pageSize)],
+      headText: 'test'
     })
   },
 
@@ -56,29 +69,35 @@ Page({
       (pageNum - 1) * pageSize,
       pageNum * pageSize
     )
+    this.data.total = this.data.tempTotal
+    if(pageNum * pageSize > this.data.total) {
+      this.data.isBottom = true
+      this.setData({
+        bottomDisplay: 'flex'
+      })
+    }
     return tempData
   },
 
   // init arr data
-  initResult() {
+  createData() {
     let dataFactory = []
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < this.data.tempTotal; i++) {
       dataFactory.push({
         content: '一段内容一段内容一段内容一段内容一段内容段内容id: ' + (i + 1),
         date: '2022-01-01'
       })
     }
-    return dataFactory;
+    this.data.factData =  dataFactory;
   },
 
   onLoad: function (options) {
-    this.setData({
-      factData: this.initResult()
-    })
+    this.factData = this.createData()
     this.setData({
       result: this.queryData(1, 10)
     })
   },
+
   onShow() {
   }
 });

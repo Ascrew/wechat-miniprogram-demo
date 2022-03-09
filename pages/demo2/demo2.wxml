@@ -1,6 +1,6 @@
 <!-- header -->
 <view class="head">
-  <view class="head-text">政策法规</view>
+  <view class="head-text">{{headText}}</view>
 </view>
 <!-- background -->
 <view class="background">
@@ -22,5 +22,8 @@
         <view class="one-box-date">{{item.date}}</view>
       </view>
     </view>
+  </view>
+  <view class="is-bottom" style="display:{{bottomDisplay}}">
+    <view class="is-bottom-text">已经到底了</view>
   </view>
 </view>

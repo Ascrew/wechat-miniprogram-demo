@@ -72,3 +72,13 @@
   font-size: 24rpx;
   color: #999;
 }
+
+.is-bottom {
+  height: 100rpx;
+  padding-bottom: 20rpx;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
