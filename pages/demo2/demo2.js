@@ -44,7 +44,10 @@ Page({
   // reach bottom 
   onReachBottom() {
     this.setData({
-      result: [...this.data.result]
+
+    })
+    this.setData({
+      result: [...this.data.result, ...this.queryData(this)]
     })
   },
 
