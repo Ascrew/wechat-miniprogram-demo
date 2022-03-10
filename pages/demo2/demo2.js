@@ -14,6 +14,7 @@ Page({
     timer: 0,
 
     // main data
+    searchText: '',
     factData: [],
     result: [],
     tempData: {
@@ -29,11 +30,11 @@ Page({
         title: '加载中',
         mask: true,
       });
-      let inputValue = e.detail.value;
+      this.data.searchText = e.detail.value;
       setTimeout(() => {
         this.setData({
-          result: [this.data.tempData]
-        })
+          result: [...this.queryData(1, 10)]
+        }, 0)
         wx.hideLoading();
       }, 0)
     }, 1500)
@@ -41,36 +42,36 @@ Page({
 
   // pull down page event  :  not work probably
   onPullDownRefresh() {
-    wx.switchTab({
-      url: '../demo2/demo2',
-      success: function(){
-        wx.stopPullDownRefresh()
-      },
-      fail: function() {
-        wx.stopPullDownRefresh()
-      }
-    });
+    this.isBottom = false
+    this.bottomDisplay = 'none'
+    this.onLoad()
+    wx.stopPullDownRefresh()
   },
 
   // reach bottom 
   onReachBottom() {
-    if(this.data.isBottom) {
+    if (this.data.isBottom) {
       return
     }
     this.data.pageNum += 1
     this.setData({
       result: [...this.data.result, ...this.queryData(this.data.pageNum, this.data.pageSize)],
-      headText: 'test'
     })
   },
 
   queryData(pageNum = 1, pageSize = 10) {
-    let tempData = this.data.factData.slice(
+    let searchData = this.data.factData
+    if (this.data.searchText.trim()) {
+      searchData = this.data.factData.filter(item => {
+        return item.content.indexOf(this.data.searchText.trim()) > -1
+      })
+    }
+    let tempData = searchData.slice(
       (pageNum - 1) * pageSize,
       pageNum * pageSize
     )
-    this.data.total = this.data.tempTotal
-    if(pageNum * pageSize > this.data.total) {
+    this.data.total = searchData.length
+    if (pageNum * pageSize > this.data.total) {
       this.data.isBottom = true
       this.setData({
         bottomDisplay: 'flex'
@@ -88,7 +89,7 @@ Page({
         date: '2022-01-01'
       })
     }
-    this.data.factData =  dataFactory;
+    this.data.factData = dataFactory;
   },
 
   onLoad: function (options) {

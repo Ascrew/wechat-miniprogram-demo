@@ -1,80 +1,91 @@
 <!-- 顶部轮播 -->
 <view class="banner-wrap">
-	<swiper
-	 class="swiper"
-	 autoplay="{{autoplay}}"
-	 interval="{{interval}}"
-	 indicatorDots="{{indicatorDots}}"
-	 duration="{{duration}}"
-	 circular="{{true}}"
-	 current="activeIndex"
-	 bindchange="switchCard"
-	>
-		<block wx:for="{{swipers}}" wx:key="*this" wx:index="index">
-			<swiper-item class="swiper-item-wrap">
-				<view class="swiper-item {{activeIndex == index? 'current' : ''}}">
-					<image class="swiper-item-img" src="{{item}}" mode="widthFix" />
-				</view>
-			</swiper-item>
-		</block>
-	</swiper>
+  <swiper
+    class="swiper"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    indicatorDots="{{indicatorDots}}"
+    duration="{{duration}}"
+    circular="{{true}}"
+    current="activeIndex"
+    bindchange="switchCard"
+  >
+    <block wx:for="{{swipers}}" wx:key="*this" wx:index="index">
+      <swiper-item class="swiper-item-wrap">
+        <view class="swiper-item {{activeIndex == index? 'current' : ''}}">
+          <image class="swiper-item-img" src="{{item}}" mode="widthFix" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 
 <!-- 主体 -->
 <view class="main-wrap">
-	<!-- 我要办... -->
-	<view class="main-one">
-		<block wx:for="{{oneBtnList}}" wx:key="*this">
-			<view class="one-button" bindtap="oneClick">
-				<image class="one-img" src="{{item.imgUrl}}" mode="aspectFit" />
-				<text class="one-text">{{item.text}}</text>
-			</view>
-		</block>
-	</view>
+  <!-- 我要办... -->
+  <view class="main-one">
+    <block wx:for="{{oneBtnList}}" wx:key="*this">
+      <view class="one-button" bindtap="oneClick">
+        <image class="one-img" src="{{item.imgUrl}}" mode="aspectFit" />
+        <text class="one-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
 
-	<!-- part 2 -->
-	<view class="main-two">
-		<block wx:for="{{twoBtnList}}" wx:key="*this">
-			<view class="two-button">
-				<image class="two-img two-left-img" src="{{item.imgUrls[0]}}" mode="widthFix" />
-				<image class="two-img" src="{{item.imgUrls[1]}}" mode="widthFix" />
-			</view>
-		</block>
-		<view class="two-button-spc">
-			<image class="two-img-spc" src="{{spcImg}}" mode="widthFix" />
-		</view>
-	</view>
+  <!-- part 2 -->
+  <view class="main-two">
+    <block wx:for="{{twoBtnList}}" wx:key="*this">
+      <view class="two-button">
+        <image
+          class="two-img two-left-img"
+          src="{{item.imgUrls[0].imgUrl}}"
+          mode="widthFix"
+          bindtap="navigateTo"
+          data-navigate="{{item.imgUrls[0].navigateContent}}"
+        />
+        <image
+          class="two-img"
+          src="{{item.imgUrls[1].imgUrl}}"
+          mode="widthFix"
+          bindtap="navigateTo"
+          data-navigate="{{item.imgUrls[1].navigateContent}}"
+        />
+      </view>
+    </block>
+    <view class="two-button-spc">
+      <image class="two-img-spc" src="{{spcImg}}" mode="widthFix" />
+    </view>
+  </view>
 
-	<!-- part 3 -->
-	<view class="main-three">
-		<block wx:for="{{threeBtnList}}" wx:key="*this">
-			<view class="three-button">
-				<image class="three-img" src="{{item.imgUrl}}" mode="widthFix" />
-				<text class="three-text">{{item.text}}</text>
-			</view>
-		</block>
-	</view>
+  <!-- part 3 -->
+  <view class="main-three">
+    <block wx:for="{{threeBtnList}}" wx:key="*this">
+      <view class="three-button">
+        <image class="three-img" src="{{item.imgUrl}}" mode="widthFix" />
+        <text class="three-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
 
-	<!-- part 4 -->
-	<view class="main-four">
-		<view class="four-left">
-			<image class="four-left-img" src="{{fourBtnList.leftImgUrl}}" mode="heightFix" />
-		</view>
-		<view class="four-right">
-			<view class="four-right-temp">
-				<view class="four-right-transform">
-					<view class="four-right-anct" wx:for="{{fourBtnList.rightContent}}" wx:key="index">
-						<view class="four-right-content">{{item.content}}</view>
-						<view class="four-right-date">{{item.date}}</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
+  <!-- part 4 -->
+  <view class="main-four">
+    <view class="four-left">
+      <image class="four-left-img" src="{{fourBtnList.leftImgUrl}}" mode="heightFix" />
+    </view>
+    <view class="four-right">
+      <view class="four-right-temp">
+        <view class="four-right-transform">
+          <view class="four-right-anct" wx:for="{{fourBtnList.rightContent}}" wx:key="index">
+            <view class="four-right-content">{{item.content}}</view>
+            <view class="four-right-date">{{item.date}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 
-	<!-- part 5	 -->
-	<view class="card-title">
-		<view class="card-text">标题</view>
-	</view>
+  <!-- part 5	 -->
+  <view class="card-title">
+    <view class="card-text">标题</view>
+  </view>
 </view>
-

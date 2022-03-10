@@ -1,0 +1,28 @@
+.background-wrap {
+  background-color: #f5f5f5;
+  width: 100%;
+  overflow: hidden;
+}
+.head-wrap {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.head-btn-wrap {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.head-btn-text {
+  margin: 0 40rpx;
+  color: blue;
+}

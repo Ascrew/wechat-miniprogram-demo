@@ -31,20 +31,38 @@ Page({
     twoBtnList: [
       {
         imgUrls: [
-          '../../static/images/2-1.png',
-          '../../static/images/2-2.png'
+          {
+            imgUrl: '../../static/images/2-1.png',
+            navigateContent: '../apReg/apReg'
+          },
+          {
+            imgUrl: '../../static/images/2-2.png',
+            navigateContent: 'c2'
+          }
         ]
       },
       {
         imgUrls: [
-          '../../static/images/2-3.png',
-          '../../static/images/2-4.png'
+          {
+            imgUrl: '../../static/images/2-3.png',
+            navigateContent: 'c3'
+          },
+          {
+            imgUrl: '../../static/images/2-4.png',
+            navigateContent: 'c4'
+          }
         ]
       },
       {
         imgUrls: [
-          '../../static/images/2-5.png',
-          '../../static/images/2-6.png'
+          {
+            imgUrl: '../../static/images/2-5.png',
+            navigateContent: 'c5'
+          },
+          {
+            imgUrl: '../../static/images/2-4.png',
+            navigateContent: 'c6'
+          }
         ]
       }
     ],
@@ -98,6 +116,12 @@ Page({
   oneClick(e) {
     console.log('listen click')
   },
+  navigateTo(e) {
+    console.log(e.currentTarget.dataset.navigate + '?id=1')
+    wx.navigateTo({
+      url: e.currentTarget.dataset.navigate
+    })
+  },
   onLoad: function (options) {
     // animation
     // let calHeight = 0
@@ -136,5 +160,5 @@ Page({
     };
     animateFunc();
     setInterval(animateFunc, 10000)
-}
+  }
 });

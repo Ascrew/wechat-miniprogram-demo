@@ -1,0 +1,9 @@
+<view class="background-wrap">
+  <view class="head-wrap">
+    <view class="head-text">选择医院</view>
+  </view>
+  <view class="head-btn-wrap">
+    <view class="head-btn-text">我的挂号记录</view>
+    <view class="head-btn-text">查看挂号指南</view>
+  </view>
+</view>
